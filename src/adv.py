@@ -1,4 +1,5 @@
 from room import Room
+from player import Player
 
 # Declare all the rooms
 # reading over and planning still
@@ -40,8 +41,38 @@ room['treasure'].s_to = room['narrow']
 
 # Make a new player object that is currently in the 'outside' room.
 
+
+
+print("Welcome to Neel's House of Terrors!")
+
+player_name = input("Please enter your name: ")
+new_player = Player(player_name, room["outside"])
+
 # Write a loop that:
-#
+print(new_player)
+print('type q to quit')
+while True:        
+    choice = input("Please choose a direction to move in (n, s, e, w): ")
+    try:
+        
+        if(choice == 'n'):
+            new_player.movement(choice)
+        elif(choice == 's'):
+            new_player.movement(choice)
+        elif(choice == 'e'):
+            new_player.movement(choice)
+        elif(choice == 'w'):
+            new_player.movement(choice)
+        elif (choice == 'q'):
+            print('Thanks for playing!')
+            break
+        else:
+            print('Please enter a valid option')
+    except:
+        print('Please enter a valid option')
+
+            
+
 # * Prints the current room name
 # * Prints the current description (the textwrap module might be useful here).
 # * Waits for user input and decides what to do.
